@@ -1,0 +1,11 @@
+<svg>
+  <symbol id="icon-arrow-left"
+    xmlns="http://www.w3.org/2000/svg" fill="none">
+    <path fill="currentColor" d="M1.5 13.598c-2-1.155-2-4.041 0-5.196L15 .608c2-1.155 4.5.288 4.5 2.598v15.588c0 2.31-2.5 3.753-4.5 2.598L1.5 13.598Z"/>
+  </symbol>
+
+  <symbol id="icon-arrow-right"
+    xmlns="http://www.w3.org/2000/svg" fill="none">
+    <path fill="currentColor" d="M18.5 8.402c2 1.155 2 4.041 0 5.196L5 21.392C3 22.547.5 21.104.5 18.794V3.206C.5.896 3-.547 5 .608l13.5 7.794Z"/>
+  </symbol>
+</svg>

@@ -1,0 +1,30 @@
+@mixin vp-1023 {
+  @media (max-width: $vp-tablet) {
+    @content;
+  }
+}
+
+@mixin vp-767 {
+  @media (max-width: $vp-mobile) {
+    @content;
+  }
+}
+
+@mixin focus-visible {
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  &:focus-visible {
+    @content;
+  }
+}
+
+@mixin any-hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}

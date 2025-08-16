@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 360px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: $ff-exo-2;
+  font-weight: 400;
+  color: $color-black;
+  background-color: $color-Midnight-Express;
+}
+
+main {
+  flex-grow: 1;
+  padding: 40px 0 80px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+
+  object-fit: cover;
+}
+
+a {
+  color: $color-black;
+  text-decoration: none;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

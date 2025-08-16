@@ -1,0 +1,134 @@
+.gallery {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__swiper {
+    margin: 0 -20px 10px;
+    padding: 20px 15px;
+    border-radius: 20px;
+    background-color: rgba($color-black, .5);
+  }
+
+  &__title {
+    margin: 0 0 25px;
+    font-size: clamp(1.563rem, 1.274rem + 1.44vw, 2.5rem);
+    font-weight: 500;
+    color: $color-white;
+  }
+
+  &__list {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 0 0 20px;
+    border-radius: 10px;
+
+    gap: 10px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+  }
+
+  &__item {
+    display: flex;
+    flex-shrink: 0;
+
+    scroll-snap-stop: always;
+    scroll-snap-align: center;
+  }
+
+  &__img {
+    width: 150px;
+    border-radius: 10px;
+    cursor: zoom-in;
+    user-select: none;
+    transition: outline $transition-300;
+
+    &--accent {
+      outline: 2px solid $color-Cyan;
+      outline-offset: -2px;
+    }
+
+    &--zoom-in {
+      width: 100%;
+      cursor: zoom-out;
+    }
+  }
+
+  &__zoom {
+    position: absolute;
+    z-index: 1;
+    top: 200px;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+    width: min(90%, 1000px);
+    opacity: 0;
+    transition: visibility $transition-300 .4s, opacity $transition-300, clip-path $transition-300;
+
+    clip-path: circle(9.0% at 50% 50%);
+
+    &--open {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility $transition-300, opacity $transition-300, clip-path $transition-300;
+
+      clip-path: circle(141.6% at 49% 56%);
+    }
+
+    &::before {
+      content: "";
+      position: fixed;
+      z-index: -1;
+      background-color: rgba($color-Midnight-Express, .5);
+
+      inset: 0;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 100%;
+    font-size: clamp(1.25rem, .865rem + 1.92vw, 2.5rem);
+    color: rgba($color-Cyan, .6);
+    opacity: .6;
+    background-color: $color-Royal-Blue;
+    cursor: pointer;
+    transition: color $transition-300, opacity $transition-300;
+    transform: translateY(-50%);
+
+    @include focus-visible {
+      color: color-Cyan;
+      opacity: 1;
+    }
+    @include any-hover {
+      color: $color-Cyan;
+      opacity: 1;
+    }
+
+    &:disabled {
+      opacity: .1;
+      pointer-events: none;
+    }
+
+    &--back {
+      left: -15px;
+    }
+
+    &--next {
+      right: -15px;
+    }
+  }
+}
